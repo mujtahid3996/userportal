@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import '../App.css';
+import '../Containers/App.css';
 import { Form, Button } from "react-bootstrap";
-const  Login = ( { onemailchange , onpasswordchange } ) => {
+const  Login = (  { onRouteChange } ) => {
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +10,18 @@ const  Login = ( { onemailchange , onpasswordchange } ) => {
         <Form>
           <Form.Group controlId="formGroupEmail" >
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" onChange = { onemailchange }/>
+            <Form.Control type="email" placeholder="Enter email" />
           </Form.Group>
           <Form.Group controlId="formGroupPassword" >
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" onChange = { onpasswordchange }  />
+            <Form.Control type="password" placeholder="Password"  />
           </Form.Group>
         </Form>
-          <Button variant="primary">LOG IN</Button>
+          <Button variant="primary" onClick= {() => onRouteChange('Login')}>LOG IN</Button>
+          <br/>
+          <div> <a href="#home" onClick= {() => onRouteChange('Registration')}>New here?Register</a></div>
+          <br/>
+          <div> <a href="#home" onClick= {() => onRouteChange('AdminLogin')}>AdminLoginHere</a></div>
       </header>
     </div>
   );

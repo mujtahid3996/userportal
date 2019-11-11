@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import '../App.css';
+import '../Containers/App.css';
 import { Form, Button,Row,Col } from "react-bootstrap";
 function ChangePassword() {
   return (

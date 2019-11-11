@@ -1,13 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import '../App.css';
 import { Navbar, Nav, NavDropdown,Form,FormControl,Button } from "react-bootstrap";
 function Adminpage() {
     return (
         <div >
-            <header >
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                   
+            <header>
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">

@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import '../App.css';
+import '../Containers/App.css';
 import { Form, Button } from "react-bootstrap";
-function Adminlogin() {
+function Adminlogin({ onRouteChange }) {
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +18,9 @@ function Adminlogin() {
           </Form.Group>
         </Form>
           <Button variant="primary">LOG IN</Button>
+          <br/>
+          <div> <a href="#home" onClick= {() => onRouteChange('Login')}>User Login</a></div>
+
       </header>
     </div>
   );

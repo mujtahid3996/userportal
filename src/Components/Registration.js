@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import '../App.css';
+import '../Containers/App.css';
 import { Form, Button, Row, Col  } from "react-bootstrap";
-function Registration() {
+function Registration({ onRouteChange }) {
     return (
         <div className="App">
             <header className="App-header">
@@ -56,7 +56,7 @@ function Registration() {
                             </Button>
                         </Col>
                         <Col>
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" type="submit" onClick={ ()=> onRouteChange('Login')}>
                                 Cancel
                             </Button>
                         </Col>
