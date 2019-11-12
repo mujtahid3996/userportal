@@ -6,10 +6,11 @@ import Navigation from '../Components/Navigation';
 import Profilepage from '../Components/Profilepage';
 var relemnt;
 class Profile extends React.Component {
-    constructor(){
-      super();
+    constructor(props){
+      super(props);
       this.state = {
         route:'Userprofile',
+        userprofile:this.props.userprofile
       }
     }
     onRouteChange = ( route ) => {
@@ -23,7 +24,7 @@ class Profile extends React.Component {
         } 
       else
       {
-        relemnt = <Profilepage/>
+        relemnt = <Profilepage userprofile= {this.state.userprofile}/>
       }
     return (
         <div >

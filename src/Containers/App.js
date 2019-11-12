@@ -6,15 +6,7 @@ import  Registration  from '../Components/Registration';
 import Adminlogin from '../Components/Adminlogin';
 import Adminpage from '../Components/Adminpage';
 import * as serviceWorker from '../serviceWorker';
-var userprofile =  {
-  id:'',
-  name:'',
-  phone:'',
-  address:'',
-  email:'',
-  birthday:'',
-  password:''
-}
+
 var renderelement;
 class App extends React.Component {
   constructor(){
@@ -24,13 +16,33 @@ class App extends React.Component {
       route:'Login',
       usersignedin: false,
       adminsignedin: false,
-      user : userprofile,
-      userlist:[ userprofile ]
+      userprofile: {
+        firstname:'',
+        lastname:'',
+        phone:'',
+        address:'',
+        email:'',
+        birthday:'',
+      },
+      userlist:[] 
     }
     
   }
-onInputChange = (event) => {
- return event.target.value; 
+loadUser = ( user ) =>{
+  this.setState({userprofile:{
+    firstname: user.firstname,
+    lastname: user.lastname,
+    phone:user.phone,
+    email:user.email,
+    address:user.address,
+    birthday:user.birthday,
+  }
+}
+)
+console.log(this.state.userprofile.birthday)
+}
+onUserRoute = (route) =>{
+  this.setState({route: route , usersignedin: true })
 }
 onRouteChange = ( route ) => {
   this.setState({route : route })
@@ -41,16 +53,19 @@ render()
   if(this.state.route === 'Login')
   {
     if(this.state.usersignedin)
-      renderelement = <Profile />
+      renderelement = <Profile userprofile = {this.state.userprofile}/>
     else
       renderelement =<Login 
-                      onRouteChange = { this.onRouteChange }  
+                      onRouteChange = { this.onRouteChange } 
+                      onUserRoute = { this.onUserRoute }
                     />
   }
   else if(this.state.route === 'Registration')
   {
     renderelement = <Registration 
-                      onRouteChange = { this.onRouteChange } 
+                      onRouteChange = { this.onRouteChange }
+                      onUserRoute = { this.onUserRoute }
+                      onLoadUser ={ this.loadUser } 
                     />
   }
   else  {
