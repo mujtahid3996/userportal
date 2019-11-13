@@ -1,8 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import '../Containers/App.css';
 import { Nav , NavDropdown , Navbar } from "react-bootstrap";
-
 function Navigation({onRouteChange}) {
   return (
     <div>
@@ -12,12 +10,12 @@ function Navigation({onRouteChange}) {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#" onClick = {()=> onRouteChange('Userprofile')}>Profilepage</Nav.Link>
+                    <Nav.Link href="#" onClick = {()=>onRouteChange('Userprofile')}>Profilepage</Nav.Link>
                     <Nav.Link href="#" onClick ={() =>onRouteChange('Changepassword')} >Changepassword</Nav.Link>
                 </Nav>
                 <Nav className="mr-right">
                     <NavDropdown title="Username" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.2">Logout</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2" onClick = {() => window.location.reload()}>Logout</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
             </Navbar.Collapse>

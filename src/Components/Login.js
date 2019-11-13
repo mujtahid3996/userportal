@@ -28,9 +28,14 @@ class Login extends React.Component {
          password:this.state.password
       })
     }).then(res =>  res.json())
-      .then(data => {
-        if(data === 'wow')
-        this.props.onUserRoute('Login');
+      .then(user => {
+        if(user.email=== this.state.email)
+            {
+              this.props.onLoadUser(user);
+              this.props.onUserRoute('Login');
+            }
+        else
+            this.props.onRouteChange('Login');
       })
     ;
   }

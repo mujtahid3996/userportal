@@ -28,7 +28,7 @@ class App extends React.Component {
     }
     
   }
-loadUser = ( user ) =>{
+loadUser = ( {...user} ) =>{
   this.setState({userprofile:{
     firstname: user.firstname,
     lastname: user.lastname,
@@ -39,7 +39,7 @@ loadUser = ( user ) =>{
   }
 }
 )
-console.log(this.state.userprofile.birthday)
+console.log(this.state.userprofile);
 }
 onUserRoute = (route) =>{
   this.setState({route: route , usersignedin: true })
@@ -58,6 +58,7 @@ render()
       renderelement =<Login 
                       onRouteChange = { this.onRouteChange } 
                       onUserRoute = { this.onUserRoute }
+                      onLoadUser ={ this.loadUser } 
                     />
   }
   else if(this.state.route === 'Registration')

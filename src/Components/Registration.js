@@ -54,7 +54,8 @@ class Registration extends React.Component {
             })
           }).then(res =>  res.json())
             .then(user => {
-                this.props.onLoadUser(user);
+                console.log(user)
+                this.props.onLoadUser( user );
                 this.props.onUserRoute('Login');
             })
       }
