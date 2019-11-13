@@ -20,7 +20,7 @@ class Profile extends React.Component {
     render() { 
       if(this.state.route === 'Changepassword')
         {
-          relemnt= <Changepassword/>
+          relemnt= <Changepassword userprofile= {this.state.userprofile} />
         } 
       else
       {
