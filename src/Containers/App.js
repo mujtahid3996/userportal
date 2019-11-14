@@ -23,8 +23,7 @@ class App extends React.Component {
         address:'',
         email:'',
         birthday:'',
-      },
-      userlist:[] 
+      } 
     }
     
   }
@@ -44,8 +43,11 @@ console.log(this.state.userprofile);
 onUserRoute = (route) =>{
   this.setState({route: route , usersignedin: true })
 }
+onAdminRoute = (route) =>{
+  this.setState({route: route , adminsignedin: true })
+}
 onRouteChange = ( route ) => {
-  this.setState({route : route })
+  this.setState({route : route ,adminsignedin:false })
 }
   
 render()
@@ -78,6 +80,7 @@ render()
     {
       renderelement =<Adminlogin 
                         onRouteChange = { this.onRouteChange }
+                        onAdminRoute ={ this.onAdminRoute }
                     />
     }
   }
