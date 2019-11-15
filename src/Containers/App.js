@@ -43,7 +43,7 @@ console.log(this.state.userprofile);
 onUserRoute = (route) =>{
   this.setState({route: route , usersignedin: true })
 }
-onAdminRoute = (route) =>{
+onAdminRoute = (route) => {
   this.setState({route: route , adminsignedin: true })
 }
 onRouteChange = ( route ) => {

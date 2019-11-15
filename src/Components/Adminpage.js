@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button,Table } from "react-bootstrap";
 import '../Containers/App.css'
 class Adminpage extends React.Component {
     constructor(){
@@ -28,7 +28,7 @@ class Adminpage extends React.Component {
               this.setState({ userlist: users,
                               filterdusers:  users
             })
-        });
+        }).catch(err => console.log(err));
       }
       onSearchChange =  (event) => {
         this.setState({ searchfield: event.target.value, 
@@ -75,14 +75,28 @@ class Adminpage extends React.Component {
                         </Navbar.Collapse>
                     </Navbar>
                 </header>
-                <div className="App">
-                    <header className="App-header">
-                        <table>
+                <div className="App-header">
+                        <Table striped bordered hover variant="dark">
+                            <thead>  
+                                <tr>
+                                    <th colSpan="15">
+                                    firstname
+                                    </th>
+                                    <th colSpan="15">
+                                    phone
+                                    </th>
+                                    <th colSpan="15">
+                                    email
+                                    </th>
+                                    <th colSpan="15">
+                                    address
+                                    </th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 {this.rendertabledata(this.state.filterdusers)}
                             </tbody>
-                        </table>
-                    </header>
+                        </Table>
                 </div>
             </div>
 

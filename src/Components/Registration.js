@@ -58,6 +58,7 @@ class Registration extends React.Component {
                 this.props.onLoadUser( user );
                 this.props.onUserRoute('Login');
             })
+            .catch(err => console.log(err))
       }
 
         render() {
@@ -150,12 +151,18 @@ class Registration extends React.Component {
                             </Form.Group>
                             <Row>
                                 <Col sm={6}>
-                                    <Button variant="primary" type="submit" onClick ={this.onSubmitRegister}>
+                                    <Button 
+                                        variant="primary" 
+                                        type="submit" 
+                                        onClick ={this.onSubmitRegister}>
                                         Register
                                     </Button>
                                 </Col>
                                 <Col sm={6}>
-                                    <Button variant="primary" type="submit" onClick={ () => onRouteChange('Login')}>
+                                    <Button 
+                                        variant="primary" 
+                                        type="submit" 
+                                        onClick={ () => onRouteChange('Login')}>
                                         Cancel
                                     </Button>
                                 </Col>
