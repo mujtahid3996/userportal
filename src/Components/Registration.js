@@ -58,8 +58,14 @@ class Registration extends React.Component {
                   this.props.onLoadUser( user );
                   this.props.onUserRoute('Login');               
                 }
+                else
+                  {
+                    alert('may be you have entered some wrong info or blank info,please check again');
+                  }    
             })
-            .catch(err => console.log(err))
+            .catch(err => {console.log(err)
+            alert('may be you have entered some wrong info,please check again')
+            })
       }
 
         render() {

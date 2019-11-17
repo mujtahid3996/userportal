@@ -18,7 +18,7 @@ class Adminlogin extends React.Component {
   }
   onSubmitAdminLogin = () => {
     this.props.onAdminRoute('AdminLogin');
-    fetch('https://guarded-thicket-05723.herokuapp.com/Adminlogin',{
+    fetch('https://cors-anywhere.herokuapp.com/guarded-thicket-05723.herokuapp.com/Adminlogin',{
       method: 'post',
       headers: {
         'Content-Type' : 'application/json'
@@ -37,6 +37,7 @@ class Adminlogin extends React.Component {
         else
           {
             this.props.onRouteChange('AdminLogin');
+            alert('Admin credentials are not correct,please check')
           } 
 
       })
