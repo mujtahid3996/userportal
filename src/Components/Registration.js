@@ -40,7 +40,7 @@ class Registration extends React.Component {
         fetch('https://guarded-thicket-05723.herokuapp.com/Register',{
             method: 'post',
             headers: {
-              'Content-Type' : 'application/json'
+              'Content-Type' : 'application/json',
             },
             body: JSON.stringify(
             {
