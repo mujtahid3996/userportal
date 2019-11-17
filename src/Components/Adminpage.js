@@ -14,7 +14,7 @@ class Adminpage extends React.Component {
     }
    
     componentDidMount() {
-        fetch('http://localhost:3000/getusers',{
+        fetch('https://guarded-thicket-05723.herokuapp.com/getusers',{
             method:'post',
             headers: {
                 'Content-Type' : 'application/json'

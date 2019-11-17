@@ -37,7 +37,7 @@ class Registration extends React.Component {
         this.setState( { date : event.target.value})
       }
       onSubmitRegister = () =>{
-        fetch('http://localhost:3000/Register',{
+        fetch('https://guarded-thicket-05723.herokuapp.com/Register',{
             method: 'post',
             headers: {
               'Content-Type' : 'application/json'
@@ -54,9 +54,10 @@ class Registration extends React.Component {
             })
           }).then(res =>  res.json())
             .then(user => {
-                console.log(user)
-                this.props.onLoadUser( user );
-                this.props.onUserRoute('Login');
+                if(user.email){
+                  this.props.onLoadUser( user );
+                  this.props.onUserRoute('Login');               
+                }
             })
             .catch(err => console.log(err))
       }

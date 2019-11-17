@@ -18,7 +18,7 @@ class Adminlogin extends React.Component {
   }
   onSubmitAdminLogin = () => {
     this.props.onAdminRoute('AdminLogin');
-    fetch('http://localhost:3000/Adminlogin',{
+    fetch('https://guarded-thicket-05723.herokuapp.com/Adminlogin',{
       method: 'post',
       headers: {
         'Content-Type' : 'application/json'

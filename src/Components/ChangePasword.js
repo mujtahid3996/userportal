@@ -19,7 +19,7 @@ class ChangePassword extends React.Component {
     this.setState( { newpassword : event.target.value } )
   }
   onSubmitpasswordChange = () => {
-    fetch('http://localhost:3000/Changepassword',{
+    fetch('https://guarded-thicket-05723.herokuapp.com/Changepassword',{
       method: 'post',
       headers: {
         'Content-Type' : 'application/json'
@@ -77,7 +77,7 @@ class ChangePassword extends React.Component {
               <Button variant="primary" onClick = {this.onSubmitpasswordChange}>ChangePassword</Button>
             </Col>
             <Col>
-              <Button variant="primary" onClick= {window.caches.delete}>Clear</Button>
+              <Button variant="primary" onClick= {window.caches.delete()}>Clear</Button>
             </Col>
           </Row>
         </header>
