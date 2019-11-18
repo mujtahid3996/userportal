@@ -17,10 +17,10 @@ class Login extends React.Component {
     this.setState( { password : event.target.value } )
   }
   onSubmitSignin = () => {
-    fetch('https://cors-anywhere.herokuapp.com/https://guarded-thicket-05723.herokuapp.com/Signin',{
+    fetch('https://fast-inlet-83214.herokuapp.com/https://guarded-thicket-05723.herokuapp.com/Signin',{
       method: 'post',
       headers: {
-        'Content-Type' : 'application/json',
+        'Content-Type' : 'application/json'
       },
       body: JSON.stringify(
       {
@@ -39,7 +39,11 @@ class Login extends React.Component {
               alert('please check your credentials again');
               this.props.onRouteChange('Login');
           }
-      })
+      }).catch(err =>{
+        alert('please check your credentials again')
+        this.props.onRouteChange('Login');
+      } )
+
     ;
   }
   render() {

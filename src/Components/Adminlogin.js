@@ -17,8 +17,7 @@ class Adminlogin extends React.Component {
     this.setState( { Adminpassword : event.target.value } )
   }
   onSubmitAdminLogin = () => {
-    this.props.onAdminRoute('AdminLogin');
-    fetch('https://cors-anywhere.herokuapp.com/guarded-thicket-05723.herokuapp.com/Adminlogin',{
+    fetch('https://fast-inlet-83214.herokuapp.com/https://guarded-thicket-05723.herokuapp.com/Adminlogin',{
       method: 'post',
       headers: {
         'Content-Type' : 'application/json'

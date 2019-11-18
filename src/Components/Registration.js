@@ -37,7 +37,7 @@ class Registration extends React.Component {
         this.setState( { date : event.target.value})
       }
       onSubmitRegister = () =>{
-        fetch('https://guarded-thicket-05723.herokuapp.com/Register',{
+        fetch('https://fast-inlet-83214.herokuapp.com/https://guarded-thicket-05723.herokuapp.com/Register',{
             method: 'post',
             headers: {
               'Content-Type' : 'application/json'
