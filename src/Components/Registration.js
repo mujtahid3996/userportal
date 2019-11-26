@@ -52,6 +52,10 @@ class Registration extends React.Component {
           alert('sorry this email is already registerd')
           this.setState({ email: '' })
         }
+        if(data === 'unavailableemail'){
+          alert('sorry the email you entered may be an invalid format,please check if the email format is valid')
+          this.setState({email: '' })
+        }
       })
       .catch(err => {
         console.log(err);
